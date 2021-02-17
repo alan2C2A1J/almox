@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pesquisar - Funcionarios</title>
+		<link rel="icon" type="image/png" sizes="36x36"  href="imagens/favicon.png">
+		<script src="css/jquery-3.3.1.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/almo.css">
+		<meta name="author" content="Alan Fernandes Faria">
+		<meta name="description" content="Sistema para gerenciar estoque almoxarifado">
+		<meta name="keywords" content="almoxarifado, sistema, gerenciamento, estoque, gerenciar">
+		
+	</head>
+	<body>
+		 <nav class="navbar navbar-dark fixed-top bg-warning flex-md-nowrap p-0 shadow">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="">Empresa X</a>
+			<input class="form-control form-control-dark w-100" type="text" placeholder="Pesquisar" aria-label="Pesquisar">
+				<ul class="navbar-nav px-3">
+					<li class="nav-item text-nowrap">
+						<a class="nav-link" href="#">Sair</a>
+					</li>
+				</ul>
+		</nav>
+	
+	
+		<div class="container-fluid">
+			<div class="row">
+				<nav class="col-md-0 d-none d-md-block bg-light sidebar">
+				 <div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						  <li class="nav-item">
+							<a class="nav-link active" href="index.html">
+							  <span data-feather="home"></span>
+							  <img src="imagens/home.png" title="Voltar para menu principal"></img>
+							  <span class="sr-only">(current)</span>
+							</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="pesquisar_produtos.html">
+							  <span data-feather="file"></span>
+							  <img src="imagens/produtos.png" title="Pesquisar por produtos"></img>
+							</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="pesquisar_funcionarios.html">
+							  <span data-feather="shopping-cart"></span>
+								<img src="imagens/funcionarios.png" title="Pesquisar por funcionarios"></img>
+							</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="pesquisar_fornecedores.html">
+							  <span data-feather="bar-chart-2"></span>
+								<img src="imagens/fornecedores.png" title="Pesquisar por fornecedores"></img>
+							</a>
+						  </li>
+					  
+					</ul>
+				</div>
+			</div>
+		</div>		
+		<div class="alert alert-warning" id="id2" role="alert">Funcionarios</div>
+		<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Codigo:</th>
+								<th>Setor:</th>
+								<th>Nome do funcionario:</th>
+								<th>Moderar</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							<tr>
+								<td><input type="text" class="form-control" placeholder="8456"></input></td>
+								<td><input type="text" class="form-control" placeholder="Comercial"></td>
+								<td><input type="text" class="form-control" placeholder="Fulano"></td>
+								<td>
+									<a class="btn btn-success" href="">Editar</a>
+									<a class="btn btn-danger" href="">Excluir</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+	
+	
+	</body>
+</html>

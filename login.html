@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang=pt-br>
+	<head>
+		<title>Login</title>
+		<link rel="icon" type="image/png" sizes="36x36"  href="imagens/favicon.png">
+		<script src="css/jquery-3.3.1.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/almo.css">
+		<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+		<meta name="author" content="Alan Fernandes Faria">
+		<meta name="description" content="Sistema para gerenciar estoque almoxarifado">
+		<meta name="keywords" content="almoxarifado, sistema, gerenciamento, estoque, gerenciar">
+		<style>
+		body{
+			background-color: #F5F5F5;
+		}
+		#formulario{
+				width: 40%;
+				margin: 0 auto;
+				margin-top: 20px;
+				padding: 30px;
+			}
+		IMG.displayed{
+			display: block;
+			margin-left: auto;
+			margin-right: auto
+		}	
+		
+		</style>	
+	</head>
+	<!-- aqui separa o head do body-->
+	<body>
+		
+		<div class="form-control" id="formulario">
+			<img class="displayed" src="imagens/warehouse.png" height="150" width="150" id="logo">
+			<label><i class="fa fa-user"></i><tr>&nbsp;Administrador:</label>
+			<input type="text" placeholder="Digite seu login:"class="form-control" id="administrador" ></input>
+			<br>
+			<i class="fa fa-key"></i><label>&nbsp;Senha:</label>
+			<input type="password" placeholder="Digite sua senha:" class="form-control" id="senha" ></input>
+			<br>
+			<a class="btn btn-success" href="index.html">Entrar</a>
+			<button class="btn btn-warning">Limpar</button>
+		</div>
+		
+	</body>
+</html>

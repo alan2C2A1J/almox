@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>Emprestados</title>
+		<link rel="icon" type="image/png" sizes="36x36"  href="imagens/favicon.png">
+		<script src="css/jquery-3.3.1.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/almo.css">
+		<meta name="author" content="Alan Fernandes Faria">
+		<meta name="description" content="Sistema para gerenciar estoque almoxarifado">
+		<meta name="keywords" content="almoxarifado, sistema, gerenciamento, estoque, gerenciar">
+		
+	</head>
+	<body>
+		 <nav class="navbar navbar-dark fixed-top bg-info flex-md-nowrap p-0 shadow">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="">Empresa X</a>
+			<input class="form-control form-control-dark w-100" type="text" placeholder="Pesquisar" aria-label="Pesquisar">
+				<ul class="navbar-nav px-3">
+					<li class="nav-item text-nowrap">
+						<a class="nav-link" href="#">Sair</a>
+					</li>
+				</ul>
+		</nav>
+	
+	
+		<div class="container-fluid tudo">
+			<div class="row">
+				<nav class="col-md-0 d-none d-md-block bg-light sidebar">
+				 <div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						  <li class="nav-item">
+							<a class="nav-link active" href="index.html">
+							  <span data-feather="home"></span>
+							  <img src="imagens/home.png" title="Voltar para menu principal"></img>
+							  <span class="sr-only">(current)</span>
+							</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="em_uso_emprestado.html">
+							  <span data-feather="shopping-cart"></span>
+								<img src="imagens/indisponivel.png" title="Produtos Emprestados"></img>
+							</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="em_uso_reservados.html">
+							  <span data-feather="bar-chart-2"></span>
+								<img src="imagens/reservado.png" title="Produtos Reservados"></img>
+							</a>
+						  </li>
+					  
+					</ul>
+				</div>
+			</div>
+			
+			<div class="alert alert-info" id="id2" role="alert">Produtos em uso</div>
+			<form>	
+				<div class="form-row">
+					<div class="col-md-2">
+						<label>Codigo:</label>
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<input type="checkbox" aria-label="Checkbox for following text input">
+							</div>
+							<input type="text" class="form-control" placeholder="Codigo 69">
+						</div>
+					</div>
+					<div class="col-md-2">
+						<label>Produto:</label>
+						<input type="text" class="form-control" placeholder="feijao">
+					</div>
+					<div class="col-md-2">
+						<label>Funcionario:</label>
+						<input type="text" class="form-control" placeholder="Funcionario alessandro">
+					</div>
+					<div class="col-md-2">
+						<label>Data de Retirada:</label>
+						<input type="date" class="form-control">
+					</div>
+					<div class="col-md-2">
+						<label>Data de Devolução:</label>
+						<input type="date" class="form-control">
+					</div>
+				</div>
+				
+				<br>
+				<div class="form-row">
+					<div class="col-md-2">
+						<label>Codigo:</label>
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<input type="checkbox" aria-label="Checkbox for following text input">
+							</div>
+							<input type="text" class="form-control" placeholder="Codigo 69">
+						</div>
+					</div>
+					<div class="col-md-2">
+						<label>Produto:</label>
+						<input type="text" class="form-control" placeholder="feijao">
+					</div>
+					<div class="col-md-2">
+						<label>Funcionario:</label>
+						<input type="text" class="form-control" placeholder="Funcionario alessandro">
+					</div>
+					<div class="col-md-2">
+						<label>Data de Retirada:</label>
+						<input type="date" class="form-control" >
+					</div>
+					<div class="col-md-2">
+						<label>Data de Devolução:</label>
+						<input type="date" class="form-control">
+					</div>
+				</div>
+				<br>
+				<div class="form-row">
+					<div class="col-md-2">
+						<label>Codigo:</label>
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<input type="checkbox" aria-label="Checkbox for following text input">
+							</div>
+							<input type="text" class="form-control" placeholder="Codigo 69">
+						</div>
+					</div>
+					<div class="col-md-2">
+						<label>Produto:</label>
+						<input type="text" class="form-control" placeholder="feijao">
+					</div>
+					<div class="col-md-2">
+						<label>Funcionario:</label>
+						<input type="text" class="form-control" placeholder="Funcionario alessandro">
+					</div>
+					<div class="col-md-2">
+						<label>Data de Retirada:</label>
+						<input type="date" class="form-control" >
+					</div>
+					<div class="col-md-2">
+						<label>Data de Devolução:</label>
+						<input type="date" class="form-control">
+					</div>
+				</div>
+				<br>
+				<div class="form-row">
+					<div class="col-md-2">
+						<label>Codigo:</label>
+						<div class="input-group-prepend">
+							<div class="input-group-text">
+								<input type="checkbox" aria-label="Checkbox for following text input">
+							</div>
+							<input type="text" class="form-control" placeholder="Codigo 69">
+						</div>
+					</div>
+					<div class="col-md-2">
+						<label>Produto:</label>
+						<input type="text" class="form-control" placeholder="feijao">
+					</div>
+					<div class="col-md-2">
+						<label>Funcionario:</label>
+						<input type="text" class="form-control" placeholder="Funcionario alessandro">
+					</div>
+				<div class="col-md-2">
+						<label>Data de Retirada:</label>
+						<input type="date" class="form-control" >
+					</div>
+					<div class="col-md-2">
+						<label>Data de Devolução:</label>
+						<input type="date" class="form-control">
+					</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		
+		<div id="botoes3">
+			<button class="btn btn-success">Entregar</button>
+			<button class="btn btn-danger">Notificar Atraso!</button>
+		</div>
+	
+	</body>
+</html>

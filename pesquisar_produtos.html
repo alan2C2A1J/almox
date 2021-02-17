@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Pesquisar - Produtos</title>
+		<link rel="icon" type="image/png" sizes="36x36"  href="imagens/favicon.png">
+		<script src="css/jquery-3.3.1.min.js"></script>
+		<script src="js/maskedinput.min.js"></script>
+		<script src="js/priceformat.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/almo.css">
+		<meta name="author" content="Alan Fernandes Faria">
+		<meta name="description" content="Sistema para gerenciar estoque almoxarifado">
+		<meta name="keywords" content="almoxarifado, sistema, gerenciamento, estoque, gerenciar">
+		
+		<script>
+			$(document).ready(function() {
+				
+				$('.mascaraReal').priceFormat({
+				    prefix: ' ' ,
+				    centsSeparator: '.',
+				    thousandsSeparator: ''
+				});						
+	
+			});
+		</script>
+		
+	</head>
+	<body>
+		 <nav class="navbar navbar-dark fixed-top bg-warning flex-md-nowrap p-0 shadow">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="">Empresa X</a>
+			<input class="form-control form-control-dark w-100" type="text" placeholder="Pesquisar" aria-label="Pesquisar">
+				<ul class="navbar-nav px-3">
+					<li class="nav-item text-nowrap">
+						<a class="nav-link" href="#">Sair</a>
+					</li>
+				</ul>
+		</nav>
+	
+		<div class="container-fluid tudo" >
+			<div class="form-row">
+				<nav class="col-md-0 d-none d-md-block bg-light sidebar">
+				 <div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						  <li class="nav-item">
+							<a class="nav-link active" href="index.html">
+							  <span data-feather="home"></span>
+							  <img src="imagens\home.png" title="Voltar para menu principal"></img>
+							  <span class="sr-only">(current)</span>
+							</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="pesquisar_produtos.html">
+							  <span data-feather="file"></span>
+							  <img src="imagens/produtos.png" title="Pesquisar por produtos"></img>
+							</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="pesquisar_funcionarios.html">
+							  <span data-feather="shopping-cart"></span>
+								<img src="imagens/funcionarios.png" title="Pesquisar por funcionarios"></img>
+							</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="pesquisar_fornecedores.html">
+							  <span data-feather="bar-chart-2"></span>
+								<img src="imagens/fornecedores.png" title="Pesquisar por fornecedores"></img>
+							</a>
+						  </li>
+					  
+					</ul>
+				</div>
+			</div>
+			
+			<div class="alert alert-warning" id="id2" role="alert">Produtos</div>
+			<div class="form-row">
+				<div class="col-md-7">
+					<label>Nome do Produto:</label>
+					<input type="text" class="form-control" placeholder="Nome do Produto">
+				</div>
+				<div class="col-md-5">		
+					<label>Cod do Produto:</label>
+					<input id="cod" type="text" class="form-control" placeholder="Cod do Produto">
+				</div>	
+			</div>
+			
+			
+			<div class="form-row">
+				<div class="col-md-2">
+					<label>Qntd em Estoque:</label>
+					<input type="text" class="form-control" placeholder="Qntd em Estoque:">
+				</div>
+				<div class="col-md-2">
+					<label>Tipo:</label>
+						<select class="form-control">
+						<option value="tipo">Tipo:</option>
+						<option value="alimento">Alimento</option>
+						<option value="demaisProdutos">Demais Produtos</option>
+					</select>
+				</div>
+				<div class="col-md-2">
+					<label>Local Armazenado:</label>
+					<input type="text" class="form-control" placeholder="Local Armazenado">
+				</div>
+				<div class="col-md-2">
+					<label>Valor:</label>
+					<div class="input-group-prepend">
+						<div class="input-group-text">R$</div>
+							<input type="text" class="form-control mascaraReal" >
+						</div>
+					</div>	
+				</div>
+				
+				<div class="form-row">
+				<div class="col-md-2">
+					<label>Em uso:</label>
+					<input type="text" class="form-control" placeholder="Sim ou nao">
+				</div>
+				<div class="col-md-2">
+					<label>Dias para devolucao:</label>
+					<input type="text" class="form-control"  placeholder="5">
+				</div>
+				<div class="col-md-2">
+					<label>Reservas:</label>
+					<input type="text" class="form-control" placeholder="Sim ou nao">
+				</div>
+			</div>
+			</div>
+			
+			
+			
+		</div>		
+		
+				<div id="botoes">
+					<button class="btn btn-warning">Reservar</button>
+					<button class="btn btn-success">Editar</button>
+					<button class="btn btn-danger">Excluir</button>
+				</div>
+		
+	</body>
+</html>

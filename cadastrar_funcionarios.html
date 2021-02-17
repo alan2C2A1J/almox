@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cadastrar - Funcionarios</title>
+		<link rel="icon" type="image/png" sizes="36x36"  href="imagens/favicon.png">
+		<script src="css/jquery-3.3.1.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/almo.css">
+		<meta name="author" content="Alan Fernandes Faria">
+		<meta name="description" content="Sistema para gerenciar estoque almoxarifado">
+		<meta name="keywords" content="almoxarifado, sistema, gerenciamento, estoque, gerenciar">
+		<script>
+			function cadastrar(){
+				// Resgatar os campos //
+				var campoNome = document.getElementById("nome_funcionario");
+				var campoCod = document.getElementById("cod");
+				var campoSetor = document.getElementById("setor");
+				
+				// validando dados
+				var nome = campoNome.value;
+				var cod = campoCod.value;
+				var setor = campoSetor.value;
+				
+				// Processando dados
+				if(cod==""){
+					alertaErro("Digite o campo CODIGO!");
+				}else if(setor==""){
+					alertaErro("Digite o campo SETOR!");
+				}else if(nome==""){
+					alertaErro("Digite o campo NOME!");
+				}else{
+					alertaSucesso("Funcionario cadastrado com sucesso!");
+				}
+			}
+			// Saida de dados
+			function alertaErro(msg){
+				$("#alerta_erro .texto").html(msg);
+				$("#alerta_erro").slideDown(400).delay(1500).slideUp(400);
+			}
+			
+			function alertaSucesso(msg){
+				$("#alerta_sucesso .texto").html(msg);
+				$("#alerta_sucesso").slideDown(400).delay(1500).slideUp(400);
+			}
+			
+		</script>
+	</head>
+	<body>
+		 <nav class="navbar navbar-dark fixed-top bg-success flex-md-nowrap p-0 shadow">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="">Empresa X</a>
+				<ul class="navbar-nav px-3">
+					<li class="nav-item text-nowrap">
+						<a class="nav-link" href="#">Sair</a>
+					</li>
+				</ul>
+		</nav>
+	
+	
+		<div class="container-fluid">
+			<div class="row">
+				<nav class="col-md-0 d-none d-md-block bg-light sidebar">
+				 <div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						  <li class="nav-item">
+							<a class="nav-link active" href="index.html">
+							  <span data-feather="home"></span>
+							  <img src="imagens/home.png" title="Voltar para menu principal"></img>
+							  <span class="sr-only">(current)</span>
+							</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="cadastrar_produtos.html">
+							  <span data-feather="file"></span>
+							  <img src="imagens/produtos.png" title="Cadastrar Produto"></img>
+							</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="cadastrar_funcionarios.html">
+							  <span data-feather="shopping-cart"></span>
+								<img src="imagens/funcionarios.png" title="Cadastrar Funcionario"></img>
+							</a>
+						  </li>
+						  <li class="nav-item">
+							<a class="nav-link" href="cadastrar_fornecedores.html">
+							  <span data-feather="bar-chart-2"></span>
+								<img src="imagens/fornecedores.png" title="Cadastrar Fornecedor"></img>
+							</a>
+						  </li>
+					  
+					</ul>
+				</div>
+			</div>
+		</div>		
+		<div class="alert alert-success" id="id2" role="alert">Funcionarios</div><br>
+		<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th>Codigo:</th>
+								<th>Setor:</th>
+								<th>Nome do funcionario:</th>
+								<th>Cadastrar:</th>
+							</tr>
+						</thead>
+						
+						<tbody>
+							<tr>
+								<td><input type="text" id="cod" class="form-control" placeholder="8456"></input></td>
+								<td><input type="text" id="setor" class="form-control" placeholder="Comercial"></td>
+								<td><input type="text" id="nome_funcionario" class="form-control" placeholder="Fulano"></td>
+								<td>
+									<button class="btn btn-success" onclick="cadastrar()">Cadastrar</button>
+									<button class="btn btn-warning" href="">Editar</button>
+									
+								</td>
+							</tr>
+						</tbody>
+		</table>
+	
+		<div id="alerta_erro" class="alert alert-danger">
+			<span class="texto">Alerta de erro!</span>
+		</div>
+		<div id="alerta_sucesso" class="alert alert-success">
+			<span class="texto">Alerta de erro!</span>
+		</div>
+	
+	</body>
+</html>

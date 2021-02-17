@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cadastrar - Produtos</title>
+		<link rel="icon" type="image/png" sizes="36x36"  href="imagens/favicon.png">
+		<script src="css/jquery-3.3.1.min.js"></script>
+		<script src="js/maskedinput.min.js"></script>
+		<script src="js/priceformat.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/almo.css">
+		<meta name="author" content="Alan Fernandes Faria">
+		<meta name="description" content="Sistema para gerenciar estoque almoxarifado">
+		<meta name="keywords" content="almoxarifado, sistema, gerenciamento, estoque, gerenciar">
+		<script>
+			function cadastrar(){
+				// Resgatar os campos //
+				var campoNomeProduto = document.getElementById("nome_produto");
+				var campoCodProduto = document.getElementById("cod_produto");
+				var campoQNTDProduto = document.getElementById("qntd_produto");
+				var campoLocalProduto = document.getElementById("local_produto");
+				var campoValorProduto = document.getElementById("valor_produto");
+				
+				// validando dados
+				var nomeProduto = campoNomeProduto.value;
+				var codProduto = campoCodProduto.value;
+				var qntdProduto = campoQNTDProduto.value;
+				var localProduto = campoLocalProduto.value;
+				var valorProduto = campoValorProduto.value;
+				
+				
+				// Processando dados
+				if(nomeProduto==""){
+					alertaErro("Digite o campo NOME DO PRODUTO");
+				}else if(codProduto==""){
+					alertaErro("Digite o campo COD DO PRODUTO");
+				}else if(qntdProduto==""){
+					alertaErro("Digite o campo QNTD EM ESTOQUE");
+				}else if(localProduto==""){
+					alertaErro("Digite o campo LOCAL ARMAZENADO");
+				}else if(valorProduto==""){
+					alertaErro("Digite o campo VALOR");
+				}else{
+					alertaSucesso("Produto cadastrado com sucesso!");
+				}
+			}
+			// Saida de dados
+			function alertaErro(msg){
+				$("#alerta_erro_produto .texto").html(msg);
+				$("#alerta_erro_produto").slideDown(400).delay(1500).slideUp(400);
+			}
+			
+			function alertaSucesso(msg){
+				$("#alerta_sucesso_produto .texto").html(msg);
+				$("#alerta_sucesso_produto").slideDown(400).delay(1500).slideUp(400);
+			}
+			
+			$(document).ready(function() {
+				
+				$('.mascaraReal').priceFormat({
+				    prefix: ' ' ,
+				    centsSeparator: '.',
+				    thousandsSeparator: ''
+				});						
+	
+			});
+		</script>
+	</head>
+	<body>
+		 <nav class="navbar navbar-dark fixed-top bg-success flex-md-nowrap p-0 shadow">
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="">Empresa X</a>
+				<ul class="navbar-nav px-3">
+					<li class="nav-item text-nowrap">
+						<a class="nav-link" href="#">Sair</a>
+					</li>
+				</ul>
+		</nav>
+	
+	
+	<div class="container-fluid tudo">
+		<div class="row">
+			<nav class="col-md-0 d-none d-md-block bg-light sidebar">
+				<div class="sidebar-sticky">
+					<ul class="nav flex-column">
+						<li class="nav-item">
+							<a class="nav-link active" href="index.html">
+								<span data-feather="home"></span>
+								<img src="imagens/home.png" title="Voltar para menu principal"></img>
+								<span class="sr-only">(current)</span>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="cadastrar_produtos.html">
+								<span data-feather="file"></span>
+								<img src="imagens/produtos.png" title="Cadastrar Produto"></img>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="cadastrar_funcionarios.html">
+								<span data-feather="shopping-cart"></span>
+								<img src="imagens/funcionarios.png" title="Cadastrar Funcionario"></img>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="cadastrar_fornecedores.html">
+								<span data-feather="bar-chart-2"></span>
+								<img src="imagens/fornecedores.png" title="Cadastrar Fornecedor"></img>
+							</a>
+						</li>
+				  
+					</ul>
+				</div>
+			</nav>	
+		</div>
+		
+		<div class="alert alert-success" id="id2" role="alert">Produtos</div>
+		<div class="form-row">
+			<div class="col-md-7">
+				<label>Nome do Produto:</label>
+				<input type="text" id="nome_produto" class="form-control" placeholder="Nome do Produto">
+			</div>
+			<div class="col-md-5">		
+				<label>Cod do Produto:</label>
+				<input id="cod_produto" type="text" class="form-control" placeholder="Cod do Produto">
+			</div>	
+		</div>
+		
+		
+		<div class="form-row prod_cadastrar">
+			<div class="col-md-3">
+				<label>Qntd em Estoque:</label>
+				<input id="qntd_produto" type="text" class="form-control" placeholder="Qntd em Estoque:">
+			</div>
+			<div class="col-md-3">
+				<label>Tipo:</label>
+				<select class="form-control">
+					<option value="tipo">Tipo:</option>
+					<option value="alimento">Alimento</option>
+					<option value="demaisProdutos">Demais Produtos</option>
+				</select>
+			</div>
+			<div class="col-md-3">
+				<label>Local Armazenado:</label>
+				<input id="local_produto" type="text" class="form-control" placeholder="Local Armazenado">
+			</div>
+			<div class="col-md-3">
+				<label>Valor:</label>
+				<div class="input-group-prepend">
+					<div class="input-group-text">R$</div>
+						<input id="valor_produto" type="text" class="form-control mascaraReal" >
+					</div>
+				</div>	
+			</div>
+		</div>
+		
+	</div>		
+	
+			<div id="botoes2">
+				<button class="btn btn-success" onclick="cadastrar()">Cadastrar</button>
+				<button class="btn btn-warning">Editar</button>
+			</div>
+			
+		<div id="alerta_erro_produto" class="alert alert-danger">
+			<span class="texto">Alerta de erro!</span>
+		</div>
+		<div id="alerta_sucesso_produto" class="alert alert-success">
+			<span class="texto">Alerta de erro!</span>
+		</div>	
+
+	
+	</div>		
+	</body>
+</html>
